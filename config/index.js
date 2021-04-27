@@ -11,6 +11,18 @@ module.exports = {
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
     proxyTable: {},
+    proxyTable: {
+      // 可配置多个代理
+      "/service": {
+        // 把 localhost:8080 代理为下面的地址
+        target: "https://music.163.com", // localhost:8080代理为这个地址
+        secure: true, // 如果是https，需要配置true
+        changeOrigin: true, // 是否跨域
+        pathRewrite: {   // 重写，如果开发环境地址中不需要service，那么可以将其重写为''
+          "^/service": ""
+        }
+      }
+    },
 
     // Various Dev Server settings
     host: 'localhost', // can be overwritten by process.env.HOST

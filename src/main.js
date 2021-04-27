@@ -20,8 +20,13 @@ Vue.use(Vuex)
 import VueParticles from 'vue-particles'
 Vue.use(VueParticles)
 
+import vueSwiper from 'vue-awesome-swiper'  //引入vue-awesome-swiper
+import 'swiper/dist/css/swiper.css'  //引入样式
+
 
 Vue.config.productionTip = false
+
+Vue.use(vueSwiper)  //使用插件
 
 /* eslint-disable no-new */
 new Vue({

@@ -18,9 +18,11 @@
         <p style="padding-left: 12%;" v-if="data.description">{{data.description}}</p>
       </div>
       <!-- 歌单列表 -->
+      <!--  :src="theMusic.src" -->
+      <!-- autoplay -->
       <div style="height: 70vh;overflow: hidden;">
         <div style="padding: 0 12%;">
-          <aplayer autoplay showlrc :music="songList[0]" :list="songList" :src="theMusic.src"></aplayer>
+          <aplayer showlrc :music="theMusic" :list="songList"></aplayer>
         </div>
       </div>
     </article>
@@ -39,9 +41,7 @@
         says: '',
         winHeight: '',
         data: {},
-        theMusic: {
-          src: ''
-        }, //当前音乐
+        theMusic: { title: ' ', artist: ' ', src: ' ', pic: ' '},//当前音乐
         songList: [],
       }
     },
@@ -56,7 +56,7 @@
     methods: {
       async fun() {
         this.data = await this.getList()
-        this.theMusic = await this.getSong()
+        // this.theMusic = await this.getSong()
         for(let i of this.data.tracks) {
           this.songList.push({
             id: i.id,
@@ -66,13 +66,13 @@
 
           })
         }
-        for(let i of this.songList) {
-          i.src = await this.getSong(i.id).url
-        }
+        // for(let i of this.songList) {
+        //   i.src = await this.getSong(i.id).url
+        // }
       },
       async getList(num = 19723756) {
         return new Promise((resolve, reject) => {
-          axios.get(`https://music.163.com/api/playlist/detail?id=${num}`)
+          axios.get(`/service/api/playlist/detail?id=${num}`)
             .then(({
               data
             }) => {
@@ -92,23 +92,23 @@
       },
       toPlay() {
       },
-      getSong() {
-        let item = this.data.tracks[0]
-        return new Promise((resolve, reject) => {
-          axios.get(`https://api.imjad.cn/cloudmusic?type=song&id=${item.id}`)
-          	.then(({
-          		data
-          	}) => {
-              let datas = {}
-          		datas.src = data.data[0].url
-          		datas.title = item.name
-          		datas.artist = item.name
-          		datas.pic = item.album.picUrl
-              resolve(datas)
-          	})
-          	.catch(console.error)
-        })
-      },
+      // getSong() {
+      //   let item = this.data.tracks[0]
+      //   return new Promise((resolve, reject) => {
+      //     axios.get(`https://api.imjad.cn/cloudmusic?type=song&id=${item.id}`)
+      //     	.then(({
+      //     		data
+      //     	}) => {
+      //         let datas = {}
+      //     		datas.src = data.data[0].url
+      //     		datas.title = item.name
+      //     		datas.artist = item.name
+      //     		datas.pic = item.album.picUrl
+      //         resolve(datas)
+      //     	})
+      //     	.catch(console.error)
+      //   })
+      // },
     }
   }
 </script>
