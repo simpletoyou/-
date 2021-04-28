@@ -64,7 +64,10 @@ npm run build --report
     cnpm install vue-awesome-swiper@2.6.7 --save
 
 # img v-for拿不到图片
-    img: require("../assets/banner/banner9.jpg"),
+    img: require("../assets/banner/banner9.jpg")
+
+# svg 动画
+    
 
 
 

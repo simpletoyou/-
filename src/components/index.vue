@@ -1,11 +1,13 @@
 <template>
   <div class="index-container">
+    <!-- 导航栏 -->
+    <page-header></page-header>
     <!-- 背景图 -->
     <!-- <div class="banner" :style="'height:' + winHeight"></div> -->
     <swiper :options="bannerBox">
       <swiper-slide
         :style="
-          'width: 100%;filter: brightness(0.6);height:600px;background: url(' +
+          'width: 100%;filter: brightness(0.6);height:800px;background: url(' +
           item.src +
           ') center no-repeat; background-size: cover;'
         "
@@ -14,8 +16,6 @@
       >
       </swiper-slide>
     </swiper>
-    <!-- 导航栏 -->
-    <page-header></page-header>
 
     <!-- 页面主体 -->
     <article style="min-height: 600px">
@@ -55,28 +55,62 @@
         ></path>
       </svg> -->
     </div>
-    <div class="sub-page">
-      <div
-        class="sub-page-card"
-        v-for="(item, index) in subPageData"
-        :key="index"
-      >
-        <div class="top">
-          <div class="title">{{ item.title }}</div>
-          <div class="desc">{{ item.desc }}</div>
-        </div>
-        <div class="intro-img">
-          <img :src="item.img" alt="" />
-        </div>
-        <div class="details">
-          <div class="logo">
-            <img :src="item.logo" alt="logo" />
-            <span>1111111</span>
+    <div class="centerBox">
+      <div class="sub-page">
+        <div class="sub-page-card">
+          <div
+            class="column"
+            v-for="(item, index) in subPageData1"
+            :key="index"
+          >
+            <div class="top">
+              <div class="title">{{ item.title }}</div>
+              <div class="desc">{{ item.desc }}</div>
+            </div>
+            <div class="intro-img">
+              <img :src="item.img" alt="" />
+            </div>
+            <div class="details">
+              <div class="logo">
+                <img :src="item.logo" alt="logo" />
+                <span>2021-04-28</span>
+              </div>
+              <div class="bottomText">
+               <div>
+                  <svg t="1619599251871" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="8483" width="12" height="12"><path d="M633.728 172.928a25.6 25.6 0 0 1 18.112 7.488l313.408 313.472a25.6 25.6 0 0 1 0 36.224l-313.408 313.408a25.6 25.6 0 0 1-36.224-36.224l295.296-295.36-295.296-295.36a25.6 25.6 0 0 1 18.112-43.712z" p-id="8484" fill="#515151"></path><path d="M76.8 486.4h870.4a25.6 25.6 0 1 1 0 51.2H76.8a25.6 25.6 0 1 1 0-51.2z" p-id="8485" fill="#515151"></path></svg>
+               </div>
+                <span>{{ item.txt }}</span>
+
+              </div>
+            </div>
           </div>
-          <p>{{ item.txt }}</p>
+        </div>
+        <div class="sub-page-card">
+          <div
+            class="column"
+            v-for="(item, index) in subPageData2"
+            :key="index"
+          >
+            <div class="top">
+              <div class="title">{{ item.title }}</div>
+              <div class="desc">{{ item.desc }}</div>
+            </div>
+            <div class="intro-img">
+              <img :src="item.img" alt="" />
+            </div>
+            <div class="details">
+              <div class="logo">
+                <img :src="item.logo" alt="logo" />
+                <span>2021-04-28</span>
+              </div>
+              <span>{{ item.txt }}</span>
+            </div>
+          </div>
         </div>
       </div>
     </div>
+    <!-- 尾部 -->
+    <page-footer></page-footer>
   </div>
 </template>
 
@@ -84,6 +118,7 @@
 // import axios
 import axios from "axios";
 import pageHeader from "./pageHeader.vue";
+import pageFooter from "./pageFooter.vue";
 export default {
   name: "index",
   data() {
@@ -122,7 +157,7 @@ export default {
         spaceBetween: 0, //间距
       },
       // 学习,美句,音乐,电影,阅读,更多
-      subPageData: [
+      subPageData1: [
         {
           title: "学习",
           desc:
@@ -133,7 +168,7 @@ export default {
             "I still keep thinking about how an entire life can seemingly amount to nothing. I guess the sad truth is, not everyone will accomplish something great.  Some of us may just have to find meaning in the little moments that make up life.",
         },
         {
-          title: "美句",
+          title: "音乐",
           desc:
             "在爱情里快乐与痛苦仅一线之隔。事实上，人们普遍相信没有痛苦的恋爱不值得拥有。对某些人来说，痛苦意味着成长。但是我们怎么能知道何时成长的痛苦会转变成疼痛的痛苦?若我们继续走在那条线上，我们算是受虐狂还是乐观主义?谈到爱情，如何能知道是真的够了?",
           img: require("../assets/banner/banner7.jpg"),
@@ -142,24 +177,26 @@ export default {
             "In love relationships, there is a fine line between pleasure and pain. In  fact, it's a common belief that a relationship without Pain is a relationship  not worth having.To some, pain implies growth. But how do we know when the growing pains stop and the ''Pain Pains'' take over?Are we masochists or optimists, if we continue to walk that Fine line?When it comes to relationships, how do you know when enough is enough?",
         },
         {
-          title: "音乐",
+          title: "阅读",
           desc: "和谐,与持久或永恒无关,而是不同的声音汇集在一起。",
           img: require("../assets/banner/banner8.jpg"),
           logo: require("../assets/index/music.svg"),
           txt:
             "Harmony, it's not about what's lasting or permanent. It is about individual voices coming together.",
         },
+      ],
+      subPageData2: [
         {
-          title: "电影",
+          title: "美句",
           desc:
-            "Never forget what you are, for surely the world will not. Makeit your strength. Then it can never be your weakenss. Armor yourself in it, and it will never be used to hurt you.",
+            "混乱。血口大张的深渊等待吞噬一切。混乱不是深渊。混乱是阶梯。很多人想往上爬却失败了，且永无机会再试。他们坠落而亡。有人本有机会攀爬，但他们拒绝了。他们守着王国不放，守着诸神，守着爱情。尽皆幻想。唯有阶梯真是存在。攀爬才是生活的全部。",
           img: require("../assets/banner/banner9.jpg"),
           logo: require("../assets/index/movie.svg"),
           txt:
             "Chaos is not a pit, Chaos is a ladder. Many who try to climb it fail, and never get to try again, The fall breaks them. And some are given a chance to climb, but they refuse. They cling to the realm, or the gods, or love:  illusions. Only the ladder is real; the climb is all there is.",
         },
         {
-          title: "阅读",
+          title: "电影",
           desc: "这么说吧，人生漫漫，凡是有价值的事， 实现起来都很困难",
           img: require("../assets/banner/banner10.jpg"),
           logo: require("../assets/index/read.svg"),
@@ -175,10 +212,12 @@ export default {
             "There are two kinds of pain. The sort of pain that makes you strong or useless pain...The sort of pain that's only suffering.",
         },
       ],
+      
     };
   },
   components: {
     pageHeader,
+    pageFooter,
   },
   mounted() {
     let that = this;
@@ -317,60 +356,72 @@ export default {
       }
     }
   }
+  .centerBox {
+    display: flex;
+    justify-content: center;
+    padding: 3% 0;
+  }
   .sub-page {
-    // display: flex;
-    // flex-wrap: wrap;
-    // flex: 1 1 100%;
-    // box-sizing: border-box;
-    // max-width: 100%;
-    // padding: 2%;
-    display: grid;
-    grid-template-columns: 50% 50%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    max-width: 1200px;
     .sub-page-card {
-      // width: 40%;
-      // width: calc(50% - 82px);
       display: flex;
       flex-direction: column;
-      border: 1px solid #ccc;
-      border-radius: 5px;
-      margin: 20px;
-      padding: 20px;
-      .top {
-        .title {
-          color: #000;
-          font-weight: 500;
-          line-height: 32px;
+      flex: 1;
+      .column {
+        cursor: pointer;
+        display: flex;
+        flex-direction: column;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        margin: 30px 20px;
+        padding: 10px 20px;
+        .top {
+          .title {
+            color: #000;
+            font-weight: 500;
+            line-height: 32px;
+          }
+          .desc {
+            color: #666;
+            line-height: 24px;
+            margin-bottom: 10px;
+          }
         }
-        .desc {
-          color: grey;
-          line-height: 24px;
-          margin-bottom: 10px;
-        }
-      }
-      .intro-img {
-        width: calc(100% - 40px);
-        img {
-          width: 100%;
-        }
-      }
-      .details {
-        .logo {
-          display: flex;
-          align-items: center;
+        .intro-img {
+          width: calc(100% - 40px);
           img {
-            width: 30px;
-            height: 30px;
+            width: 100%;
+          }
+        }
+        .details {
+          .logo {
+            display: flex;
+            align-items: center;
+            line-height: 24px;
+            img {
+              width: 24px;
+              height: 24px;
+              margin-right: 5px;
+            }
+            span {
+              color: gray;
+              line-height: 36px;
+            }
           }
           span {
-            color: #000;
+            color: #242424;
+            font-size: 14px;
           }
-        }
-        p {
-          line-height: 32px;
-          color: #000;
         }
       }
     }
+  }
+  .bottomText {
+    display: flex;
+    flex-direction: row;
   }
 }
 </style>
