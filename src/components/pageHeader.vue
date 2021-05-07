@@ -44,7 +44,6 @@
           </svg>
           <span>更多</span>
         </div>
-        
 
         <!-- <div @click="$router.push('/learning')">学习</div>
         <div @click="$router.push('/saying')">美句</div>
@@ -70,6 +69,7 @@ nav {
 
 .myInfo {
   cursor: pointer;
+  color: #fff;
 }
 
 .navSty {
@@ -77,8 +77,10 @@ nav {
   justify-content: flex-start;
   align-items: center;
   height: 62px;
+  color: #fff;
 }
 .navitem {
+  cursor: pointer;
   position: relative;
 }
 
@@ -124,11 +126,10 @@ nav {
   position: relative;
   width: 96px;
   span {
-  position: absolute;
-  top: 6px;
-  left: 18px;
-  z-index: -1;
+    position: absolute;
+    top: 6px;
+    left: 16px;
+    z-index: -1;
+  }
 }
-}
-
 </style>

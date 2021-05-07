@@ -128,6 +128,7 @@
   .music-container {
     line-height: @line;
     position: relative;
+    color: #FFF;
 
 
     li {

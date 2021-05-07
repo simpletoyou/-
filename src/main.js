@@ -28,6 +28,9 @@ Vue.config.productionTip = false
 
 Vue.use(vueSwiper)  //使用插件
 
+import datas from '../src/common/datas'
+Vue.prototype.$datas = datas
+
 /* eslint-disable no-new */
 new Vue({
   el: '#app',

@@ -18,12 +18,12 @@
     </swiper>
 
     <!-- 页面主体 -->
-    <article style="min-height: 600px">
+    <article style="min-height: 500px">
       <div class="weather-card">
         <div class="main">
           <div class="city">{{ weather.city }}</div>
           <div class="temperature">
-            <img src="../assets/cloudy.png" alt="" />
+            <!-- <img src="../assets/cloudy.png" alt="" /> -->
             {{ weather.temperature }}℃
           </div>
         </div>
@@ -55,7 +55,28 @@
         ></path>
       </svg> -->
     </div>
+    <!-- <div class="about-box">
+      <div class="bg">
+        <div>
+          <p>楚歌儿</p>
+          <p>chugeer</p>
+        </div>
+      </div>
+    </div> -->
+    <div class="more-box">
+      <div class="sub-box">
+        <div class="title">this is title</div>
+        <div class="desc">this is desc</div>
+        <div class="imgs">
+          <div class="sub-img"></div>
+          <div class="sub-img"></div>
+          <div class="sub-img"></div>
+        </div>
+        <p>this is content</p>
+      </div>
+    </div>
     <div class="centerBox">
+      <!-- 六张卡片 -->
       <div class="sub-page">
         <div class="sub-page-card">
           <div
@@ -68,7 +89,9 @@
               <div class="desc">{{ item.desc }}</div>
             </div>
             <div class="intro-img">
-              <img :src="item.img" alt="" />
+              <div class="img-box">
+                <img :src="item.img" alt="" />
+              </div>
             </div>
             <div class="details">
               <div class="logo">
@@ -76,11 +99,10 @@
                 <span>2021-04-28</span>
               </div>
               <div class="bottomText">
-               <div>
+                <!-- <div class="arrow">
                   <svg t="1619599251871" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="8483" width="12" height="12"><path d="M633.728 172.928a25.6 25.6 0 0 1 18.112 7.488l313.408 313.472a25.6 25.6 0 0 1 0 36.224l-313.408 313.408a25.6 25.6 0 0 1-36.224-36.224l295.296-295.36-295.296-295.36a25.6 25.6 0 0 1 18.112-43.712z" p-id="8484" fill="#515151"></path><path d="M76.8 486.4h870.4a25.6 25.6 0 1 1 0 51.2H76.8a25.6 25.6 0 1 1 0-51.2z" p-id="8485" fill="#515151"></path></svg>
-               </div>
+               </div> -->
                 <span>{{ item.txt }}</span>
-
               </div>
             </div>
           </div>
@@ -96,19 +118,40 @@
               <div class="desc">{{ item.desc }}</div>
             </div>
             <div class="intro-img">
-              <img :src="item.img" alt="" />
+              <div class="img-box">
+                <img :src="item.img" alt="" />
+              </div>
             </div>
             <div class="details">
               <div class="logo">
                 <img :src="item.logo" alt="logo" />
                 <span>2021-04-28</span>
               </div>
-              <span>{{ item.txt }}</span>
+              <!-- <span>{{ item.txt }}</span> -->
+              <div class="center">
+                <!-- <div class="btn btn-reverse btn-arrow"> -->
+                <span
+                  >{{ item.txt }}
+                  <!-- <svg version="1.1" id="Layer_1" xmlns="https://www.w3.org/2000/svg"
+						xmlns:xlink="https://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 36.1 25.8"
+						enable-background="new 0 0 36.1 25.8" xml:space="preserve">
+						<g>
+							<line fill="none" stroke="#FFFFFF" stroke-width="3" stroke-miterlimit="10" x1="0" y1="12.9"
+								x2="34" y2="12.9"></line>
+							<polyline fill="none" stroke="#FFFFFF" stroke-width="3" stroke-miterlimit="10"
+								points="22.2,1.1 34,12.9 22.2,24.7   "></polyline>
+						</g>
+					</svg> -->
+                </span>
+                <!-- </div> -->
+              </div>
             </div>
           </div>
         </div>
       </div>
+      <!-- 底部内容 -->
     </div>
+
     <!-- 尾部 -->
     <page-footer></page-footer>
   </div>
@@ -126,28 +169,7 @@ export default {
       says: "",
       winHeight: "",
       weather: {},
-      slide: [
-        {
-          name: "1",
-          src: require("../assets/banner/banner1.jpg"),
-        },
-        {
-          name: "2",
-          src: require("../assets/banner/banner2.png"),
-        },
-        {
-          name: "3",
-          src: require("../assets/banner/banner3.jpg"),
-        },
-        {
-          name: "4",
-          src: require("../assets/banner/banner4.jpg"),
-        },
-        {
-          name: "5",
-          src: require("../assets/banner/banner5.jpg"),
-        },
-      ],
+      slide: [],
       bannerBox: {
         slidesPerView: 1, //显示slide的数量
         centeredSlides: true, //居中显示
@@ -157,62 +179,6 @@ export default {
         spaceBetween: 0, //间距
       },
       // 学习,美句,音乐,电影,阅读,更多
-      subPageData1: [
-        {
-          title: "学习",
-          desc:
-            "我一直在思考一个人的一生怎么能一无所成呢。事实就是这么悲哀，不是所有的人都能功成名就。我们中有些人注定要在日常生活的点滴中寻找生命的意义。",
-          img: require("../assets/banner/banner6.jpg"),
-          logo: require("../assets/index/learn.svg"),
-          txt:
-            "I still keep thinking about how an entire life can seemingly amount to nothing. I guess the sad truth is, not everyone will accomplish something great.  Some of us may just have to find meaning in the little moments that make up life.",
-        },
-        {
-          title: "音乐",
-          desc:
-            "在爱情里快乐与痛苦仅一线之隔。事实上，人们普遍相信没有痛苦的恋爱不值得拥有。对某些人来说，痛苦意味着成长。但是我们怎么能知道何时成长的痛苦会转变成疼痛的痛苦?若我们继续走在那条线上，我们算是受虐狂还是乐观主义?谈到爱情，如何能知道是真的够了?",
-          img: require("../assets/banner/banner7.jpg"),
-          logo: require("../assets/index/says.svg"),
-          txt:
-            "In love relationships, there is a fine line between pleasure and pain. In  fact, it's a common belief that a relationship without Pain is a relationship  not worth having.To some, pain implies growth. But how do we know when the growing pains stop and the ''Pain Pains'' take over?Are we masochists or optimists, if we continue to walk that Fine line?When it comes to relationships, how do you know when enough is enough?",
-        },
-        {
-          title: "阅读",
-          desc: "和谐,与持久或永恒无关,而是不同的声音汇集在一起。",
-          img: require("../assets/banner/banner8.jpg"),
-          logo: require("../assets/index/music.svg"),
-          txt:
-            "Harmony, it's not about what's lasting or permanent. It is about individual voices coming together.",
-        },
-      ],
-      subPageData2: [
-        {
-          title: "美句",
-          desc:
-            "混乱。血口大张的深渊等待吞噬一切。混乱不是深渊。混乱是阶梯。很多人想往上爬却失败了，且永无机会再试。他们坠落而亡。有人本有机会攀爬，但他们拒绝了。他们守着王国不放，守着诸神，守着爱情。尽皆幻想。唯有阶梯真是存在。攀爬才是生活的全部。",
-          img: require("../assets/banner/banner9.jpg"),
-          logo: require("../assets/index/movie.svg"),
-          txt:
-            "Chaos is not a pit, Chaos is a ladder. Many who try to climb it fail, and never get to try again, The fall breaks them. And some are given a chance to climb, but they refuse. They cling to the realm, or the gods, or love:  illusions. Only the ladder is real; the climb is all there is.",
-        },
-        {
-          title: "电影",
-          desc: "这么说吧，人生漫漫，凡是有价值的事， 实现起来都很困难",
-          img: require("../assets/banner/banner10.jpg"),
-          logo: require("../assets/index/read.svg"),
-          txt:
-            "Let me tell you something about life. Anything that’s worth doing is hard.",
-        },
-        {
-          title: "更多",
-          desc: "痛苦分两种，一种让你变得更强，另一种毫无价值，只是徒添折磨。",
-          img: require("../assets/banner/banner11.jpg"),
-          logo: require("../assets/index/learn.svg"),
-          txt:
-            "There are two kinds of pain. The sort of pain that makes you strong or useless pain...The sort of pain that's only suffering.",
-        },
-      ],
-      
     };
   },
   components: {
@@ -220,25 +186,26 @@ export default {
     pageFooter,
   },
   mounted() {
-    let that = this;
     this.winHeight = window.innerHeight + "px";
-    axios
-      .get("http://wthrcdn.etouch.cn/weather_mini?city=广州市")
-      .then(({ data }) => {
-        if (data.status === 1000) {
-          that.weather = data.data;
-          that.weather.temperature = data.data.wendu;
-          for (let i of that.weather.forecast) {
-            i.day = i.date.substring(i.date.lastIndexOf("星"), i.date.length);
-            i.date = i.date.replace(/\D/g, "");
-            i.windPower = i.fengli.replace(/\D/g, "");
-            i.high = i.high.replace(/\D/g, "");
-            i.low = i.low.replace(/\D/g, "");
-            i.windForward = i.fengxiang;
-          }
-        }
-      })
-      .catch(console.error);
+  },
+  created() {
+    let that = this;
+    this.slide = this.$datas.slide;
+    this.subPageData1 = this.$datas.subPageData1;
+    this.subPageData2 = this.$datas.subPageData2;
+    Promise.all([this.$datas.getWeather()]).then((data) => {
+      // 处理天气数据
+      that.weather = data[0].data;
+      that.weather.temperature = data[0].data.wendu;
+      for (let i of that.weather.forecast) {
+        i.day = i.date.substring(i.date.lastIndexOf("星"), i.date.length);
+        i.date = i.date.replace(/\D/g, "");
+        i.windPower = i.fengli.replace(/\D/g, "");
+        i.high = i.high.replace(/\D/g, "");
+        i.low = i.low.replace(/\D/g, "");
+        i.windForward = i.fengxiang;
+      }
+    });
   },
 };
 </script>
@@ -287,7 +254,7 @@ export default {
     z-index: 3;
     .weather-card {
       float: right;
-      width: 600px;
+      width: 500px;
       margin-top: 8%;
       margin-right: 2rem;
       border: 1px solid #ffffff3b;
@@ -296,6 +263,7 @@ export default {
       border-radius: 5px;
       display: flex;
       flex-direction: column;
+      color: #fff;
 
       .main {
         display: flex;
@@ -303,7 +271,7 @@ export default {
         align-items: center;
         line-height: 60px;
         padding-bottom: 1.2rem;
-        font-size: 1.6rem;
+        font-size: 1.2rem;
         .temperature {
           display: flex;
           align-items: center;
@@ -371,7 +339,6 @@ export default {
       flex-direction: column;
       flex: 1;
       .column {
-        cursor: pointer;
         display: flex;
         flex-direction: column;
         border: 1px solid #ccc;
@@ -392,8 +359,17 @@ export default {
         }
         .intro-img {
           width: calc(100% - 40px);
-          img {
-            width: 100%;
+          .img-box {
+            overflow: hidden;
+            img {
+              width: 100%;
+              transition: all 1s;
+              display: block;
+              cursor: pointer;
+            }
+            img:hover {
+              transform: scale(1.1);
+            }
           }
         }
         .details {
@@ -409,11 +385,16 @@ export default {
             span {
               color: gray;
               line-height: 36px;
+              text-indent: 0;
             }
           }
-          span {
-            color: #242424;
-            font-size: 14px;
+          .center {
+            cursor: pointer;
+            span {
+              text-indent: 2em;
+              color: #242424;
+              font-size: 14px;
+            }
           }
         }
       }
@@ -422,6 +403,120 @@ export default {
   .bottomText {
     display: flex;
     flex-direction: row;
+    position: relative;
+  }
+  .about-box {
+    .bg {
+      width: 100%;
+      height: 500px;
+      background: url(../assets/index/img_bg.jpg) center no-repeat;
+      background-size: cover;
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      div {
+        width: 1200px;
+        display: flex;
+        flex-direction: column;
+        p {
+          padding: 0 40px;
+          font-size: 32px;
+          color: #fff;
+          margin-top: 0;
+        }
+      }
+    }
+  }
+  .more-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 50px 0;
+    .sub-box {
+      padding-top: 50px;
+      width: 1200px;
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      align-items: center;
+      line-height: 48px;
+      .title {
+        font-weight: 500;
+        color: rgb(61, 57, 57);
+        font-size: 32px;
+      }
+      .desc {
+        font-size: 20px;
+        color: rgb(90, 77, 77);
+      }
+      .imgs {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        .sub-img {
+          cursor: pointer;
+          margin: 30px;
+          width: 360px;
+          height: 300px;
+          background: url(../assets/index/img_bg.jpg) center no-repeat;
+          background-size: cover;
+        }
+      }
+    }
+  }
+
+  .btn {
+    border: none;
+    text-transform: uppercase;
+    // transition: color 0.1s cubic-bezier(0.16, 0.08, 0.355, 1), background 0.1s cubic-bezier(0.16, 0.08, 0.355, 1);
+    display: inline-block;
+    cursor: pointer;
+    width: calc(100% - 60px);
+    vertical-align: middle;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    padding: 0 30px;
+  }
+
+  .btn-arrow {
+    position: relative;
+    // transition: background-color 300ms ease-out;
+  }
+
+  .btn-arrow span {
+    display: inline-block;
+    position: relative;
+    // transition: all 300ms ease-out;
+    will-change: transform;
+  }
+
+  .btn-arrow:hover span {
+    transform: translate3d(-1rem, 0, 0);
+  }
+
+  .btn-arrow svg {
+    position: absolute;
+    width: 1.1em;
+    right: 0px;
+    right: 0rem;
+    opacity: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: all 300ms ease-out;
+    will-change: right, opacity;
+  }
+
+  .btn-arrow svg * {
+    stroke-width: 5;
+    stroke-color: transparent;
+  }
+
+  .btn-arrow:hover svg {
+    opacity: 1;
+    right: -2rem;
   }
 }
 </style>
