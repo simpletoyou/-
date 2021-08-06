@@ -1,4 +1,13 @@
+<!--
+ * @Description: 
+ * @version: 
+ * @Author: chenchuhua
+ * @Date: 2021-04-22 14:26:50
+ * @LastEditors: chenchuhua
+ * @LastEditTime: 2021-05-13 17:56:43
+-->
 <template>
+<!-- 设置粒子背景 -->
   <div id="app">
     <vue-particles color="#fff" :particleOpacity="0.6" :particlesNumber="20" shapeType="star" :particleSize="2"
       linesColor="#fff" :linesWidth="1" :lineLinked="true" :lineOpacity="0.4" :linesDistance="150" :moveSpeed="2"

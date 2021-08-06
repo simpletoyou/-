@@ -84,30 +84,6 @@ nav {
   position: relative;
 }
 
-// .navSty div {
-//   width: 3.3rem;
-//   height: 3.125rem;
-//   line-height: 3.125rem;
-//   text-align: center;
-//   position: relative;
-// }
-
-// .navSty div:after {
-//   content: "";
-//   width: 0;
-//   height: 3px;
-//   background: pink;
-//   position: absolute;
-//   top: 100%;
-//   left: 50%;
-//   transition: all 0.8s;
-// }
-
-// .navSty div:hover:after {
-//   left: 0%;
-//   width: 100%;
-// }
-
 #shape {
   stroke-width: 2px;
   fill: transparent;

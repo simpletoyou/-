@@ -1,4 +1,13 @@
-import axios from "axios";
+/*
+ * @Description: 
+ * @version: 
+ * @Author: chenchuhua
+ * @Date: 2021-05-06 16:22:29
+ * @LastEditors: chenchuhua
+ * @LastEditTime: 2021-05-14 16:08:43
+ */
+
+// 首页轮播图
 const slide = [
     {
       name: "1",
@@ -21,6 +30,7 @@ const slide = [
       src: require("../assets/banner/banner5.jpg"),
     },
 ];
+// 首页左侧三张卡片
 const subPageData1 = [
     {
         title: "学习",
@@ -49,6 +59,7 @@ const subPageData1 = [
             "Harmony, it's not about what's lasting or permanent. It is about individual voices coming together.",
     },
 ];
+// 首页右侧三张卡片
 const subPageData2 = [
     {
         title: "美句",
@@ -76,19 +87,49 @@ const subPageData2 = [
             "There are two kinds of pain. The sort of pain that makes you strong or useless pain...The sort of pain that's only suffering.",
     },
 ];
-let getWeather = () => {
-    return axios
-      .get("http://wthrcdn.etouch.cn/weather_mini?city=广州市")
-      .then(({ data }) => {
-        if (data.status === 1000) {
-            return data
-        }
-      })
-      .catch(console.error);
-}
+// learning page
+let learnDatas = [
+    {
+        id:1,
+        title:'这个雨天，少女温热的心脏，跳动了一百零一下',
+        author:'楚歌儿',
+        time:'2021-4-26',
+        img: require("../assets/banner/banner10.jpg"),
+        label: ['文字','可爱的我们'],
+        content:'有太多的东西擅长捉迷藏，去年买的旧围巾，刚到手的新橡皮，妈妈最称手的缝衣针，还有名为心动的喜欢一个人的感觉，它们让我们铆足了劲，却一无所获，然后在我们心灰意冷时，又轻描淡写地出现在任何地方，椅背上、书本中、棉线里，还有近在咫尺的我身后。人的心脏，平均每分钟会跳动六十至一百次，我数不清自己的心脏跳动频率的那天，连雨伞上坠落的水滴，都一起被打乱了节奏，悸动、雀跃、紧张，汇聚成了所有无处安放的心动，这个雨天，少女温热的心脏，跳动了一百零一下。'
+    },
+    {
+        id:2,
+        title:'这个雨天，少女温热的心脏，跳动了一百零一下',
+        author:'楚歌儿',
+        time:'2021-4-26',
+        img: require("../assets/banner/banner10.jpg"),
+        label: ['文字','可爱的我们'],
+        content:'有太多的东西擅长捉迷藏，去年买的旧围巾，刚到手的新橡皮，妈妈最称手的缝衣针，还有名为心动的喜欢一个人的感觉，它们让我们铆足了劲，却一无所获，然后在我们心灰意冷时，又轻描淡写地出现在任何地方，椅背上、书本中、棉线里，还有近在咫尺的我身后。人的心脏，平均每分钟会跳动六十至一百次，我数不清自己的心脏跳动频率的那天，连雨伞上坠落的水滴，都一起被打乱了节奏，悸动、雀跃、紧张，汇聚成了所有无处安放的心动，这个雨天，少女温热的心脏，跳动了一百零一下。'
+    },
+    {
+        id:3,
+        title:'这个雨天，少女温热的心脏，跳动了一百零一下',
+        author:'楚歌儿',
+        time:'2021-4-26',
+        img: require("../assets/banner/banner10.jpg"),
+        label: ['文字','可爱的我们'],
+        content:'有太多的东西擅长捉迷藏，去年买的旧围巾，刚到手的新橡皮，妈妈最称手的缝衣针，还有名为心动的喜欢一个人的感觉，它们让我们铆足了劲，却一无所获，然后在我们心灰意冷时，又轻描淡写地出现在任何地方，椅背上、书本中、棉线里，还有近在咫尺的我身后。人的心脏，平均每分钟会跳动六十至一百次，我数不清自己的心脏跳动频率的那天，连雨伞上坠落的水滴，都一起被打乱了节奏，悸动、雀跃、紧张，汇聚成了所有无处安放的心动，这个雨天，少女温热的心脏，跳动了一百零一下。'
+    },
+    {
+        id:4,
+        title:'这个雨天，少女温热的心脏，跳动了一百零一下',
+        author:'楚歌儿',
+        time:'2021-4-26',
+        img: require("../assets/banner/banner10.jpg"),
+        label: ['文字','可爱的我们'],
+        content:'有太多的东西擅长捉迷藏，去年买的旧围巾，刚到手的新橡皮，妈妈最称手的缝衣针，还有名为心动的喜欢一个人的感觉，它们让我们铆足了劲，却一无所获，然后在我们心灰意冷时，又轻描淡写地出现在任何地方，椅背上、书本中、棉线里，还有近在咫尺的我身后。人的心脏，平均每分钟会跳动六十至一百次，我数不清自己的心脏跳动频率的那天，连雨伞上坠落的水滴，都一起被打乱了节奏，悸动、雀跃、紧张，汇聚成了所有无处安放的心动，这个雨天，少女温热的心脏，跳动了一百零一下。'
+    }
+];
+
 export default {
     slide,
 	subPageData1,
     subPageData2,
-    getWeather
+    learnDatas
 }

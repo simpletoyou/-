@@ -1,3 +1,11 @@
+<!--
+ * @Description: 
+ * @version: 
+ * @Author: chenchuhua
+ * @Date: 2021-04-22 14:26:50
+ * @LastEditors: chenchuhua
+ * @LastEditTime: 2021-06-01 16:40:43
+-->
 # mycherry
 
 > A Vue.js project
@@ -63,34 +71,9 @@ npm run build --report
 # install swiper
     cnpm install vue-awesome-swiper@2.6.7 --save
 
-# img v-for拿不到图片
-    img: require("../assets/banner/banner9.jpg")
+# install Truffle ---- to 
+    npm install -g truffle
 
-# svg 动画
-
-# css 
-    border-sizing: border-box; 将边框绘制在指定宽高容器之内
-# div内图片下方存在空白像素
-    1.display:block
-    2.vertical-align:middle
-    3.设置小值行高
-    4.设置小值font-size
-
-# css规范
-body,p,h1,h2,h3,h4,h5,h6{margin:0;}
-ul,ol{list-type:none; margin:0; padding:0;}
-
-# Vue全局变量之prototype（原型属性）
-    1. 直接定义：Vue.prototype.a=1
-    2. import-export引入导出变量
-        1). 新建js文件，定义变量及数值后export
-        2). 在main.js文件import上述js文件
-            import datas from '../src/json/datas'
-Vue.prototype.$datas = datas
-            则定义了全局变量datas
-    3. 在vue文件中，使用this.a或者this.$datas即可
-
-    
 
 
 

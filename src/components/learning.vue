@@ -1,25 +1,43 @@
+<!--
+ * @Description: 
+ * @version: 
+ * @Author: chenchuhua
+ * @Date: 2021-04-22 14:26:50
+ * @LastEditors: chenchuhua
+ * @LastEditTime: 2021-05-14 16:13:46
+-->
 <template>
   <div class="learn-container">
     <!-- 背景图 -->
-    <div class="banner" :style="'height:'+winHeight"></div>
+    <!-- <div class="banner" :style="'height:'+winHeight"></div> -->
     <!-- 导航栏 -->
     <page-header></page-header>
 
     <!-- 页面主体 -->
     <article>
+      <div class="inner-box">
+        <div class="card" v-for="(item, index) in list" :key="index">
+          <span class="card-title">{{item.title}}</span>
+          <div class="card-details" style="display: flex;">
+              <img class="card-details__img" src="../assets/index/music.svg" alt="">
+              <span class="card-details__author">{{item.author}}</span>
+              <span class="card-details__time">{{item.time}}</span>
+          </div>
+          <span class="card-content">{{item.content}}</span>
+        </div>
+      </div>
     </article>
   </div>
 </template>
 
 <script>
-  // import axios
-  import axios from "axios"
   import pageHeader from './pageHeader.vue'
   export default {
     data() {
       return {
         says: '',
         winHeight: '',
+        list: '',//获取学习卡片数据
       }
     },
     components: {
@@ -27,45 +45,13 @@
     },
     mounted() {
       this.winHeight = window.innerHeight + 'px'
-      axios.get('https://v1.hitokoto.cn')
-        .then(({
-          data
-        }) => {
-
-        })
-        .catch(console.error)
+    },
+    created() {
+      this.list = this.$datas.learnDatas
     }
   }
 </script>
 
 <style lang="less">
-  @line: 30px;
-  @color: #FFF;
-  @bg: #d9d9d9;
-  @font: 16px;
-
-  .learn-container {
-    line-height: @line;
-    position: relative;
-
-    li {
-      color: @color;
-      display: inline-block;
-      color: #FFF;
-      text-decoration: none;
-      font-size: @font;
-      margin-right: 30px;
-      cursor: pointer;
-    }
-
-
-
-    .banner {
-      filter: brightness(0.6);
-      width: 100%;
-      background: url(https://cn-south-227-storage-hitokoto-19627663.oss.dogecdn.com/pic/qf3cu.jpg) center no-repeat;
-      background-size: cover
-    }
-  }
-
+@import "../css/learning.less";
 </style>

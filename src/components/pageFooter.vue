@@ -39,12 +39,7 @@
             text-indent: 2em;
             font-weight: 200;
         }
-       
     }
-   
-    // background: url(../assets/banner/banner8.jpg)
-    //   center no-repeat;
-    // background-size: cover;
   }
 }
 
