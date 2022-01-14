@@ -4,7 +4,7 @@
  * @Author: chenchuhua
  * @Date: 2021-04-22 14:26:50
  * @LastEditors: chenchuhua
- * @LastEditTime: 2021-06-01 16:40:43
+ * @LastEditTime: 2021-08-18 14:58:05
 -->
 # mycherry
 
@@ -71,8 +71,10 @@ npm run build --report
 # install swiper
     cnpm install vue-awesome-swiper@2.6.7 --save
 
-# install Truffle ---- to 
+# install Truffle
     npm install -g truffle
+
+# cnpm install swiper swiper@3.4.2 --save-dev
 
 
 

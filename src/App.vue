@@ -3,8 +3,8 @@
  * @version: 
  * @Author: chenchuhua
  * @Date: 2021-04-22 14:26:50
- * @LastEditors: chenchuhua
- * @LastEditTime: 2021-05-13 17:56:43
+ * @LastEditors: simpletoyou
+ * @LastEditTime: 2021-10-12 14:57:19
 -->
 <template>
 <!-- 设置粒子背景 -->
@@ -29,5 +29,8 @@
     position: absolute;
     z-index: 1;
     /* margin-top: 100px; */
+  }
+  body {
+    background: #eaf3fa;
   }
 </style>

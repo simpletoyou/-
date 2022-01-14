@@ -19,11 +19,10 @@
 
     <!-- 页面主体 -->
     <article style="min-height: 500px">
-      <div class="weather-card">
+      <!-- <div class="weather-card">
         <div class="main">
           <div class="city">{{ weather.city }}</div>
           <div class="temperature">
-            <!-- <img src="../assets/cloudy.png" alt="" /> -->
             {{ weather.temperature }}℃
           </div>
         </div>
@@ -39,7 +38,7 @@
             <div>{{ item.low }}℃~{{ item.high }}℃</div>
           </div>
         </div>
-      </div>
+      </div> -->
     </article>
     <!-- <div class="about-box">
       <div class="bg">
@@ -217,7 +216,7 @@ export default {
         slidesPerView: 1, //显示slide的数量
         centeredSlides: true, //居中显示
         loop: true, //循环
-        autoplay: true,
+        autoplay: 3000,
         initialSlide: 1, //初始索引
         spaceBetween: 0, //间距
       },
@@ -270,7 +269,7 @@ export default {
     goTop() {
       if (this.myTimer == -1) {
         this.myTimer = setInterval(() => {
-          this.scrollNum -= 60;
+          this.scrollNum -= 50;
           if (this.scrollNum <= 0) {
             this.scrollNum = 0;
             window.clearInterval(this.myTimer); //停止执行
@@ -285,6 +284,7 @@ export default {
 </script>
 
 <style lang="less">
+@import "../css/variables.less";
 @import "../css/index.less";
 
 #paper-line-draw {
