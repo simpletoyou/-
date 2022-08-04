@@ -3,8 +3,8 @@
  * @version: 
  * @Author: chenchuhua
  * @Date: 2021-05-12 15:16:53
- * @LastEditors: chenchuhua
- * @LastEditTime: 2021-05-13 17:43:43
+ * @LastEditors: chenchuhua 3361694095@qq.com
+ * @LastEditTime: 2022-08-04 14:09:49
 -->
 # img v-for拿不到图片
     img: require("../assets/banner/banner9.jpg")
@@ -96,3 +96,10 @@ Vue.prototype.$datas = datas
         </div> 
 # html5 语义元素
     header nav section article aside footer details summary
+
+## 样式规范
+    nav 16px
+    name 40px
+    desc 20px
+    big-name 60px
+    content 16px

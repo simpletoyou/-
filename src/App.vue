@@ -4,7 +4,7 @@
  * @Author: chenchuhua
  * @Date: 2021-04-22 14:26:50
  * @LastEditors: chenchuhua 3361694095@qq.com
- * @LastEditTime: 2022-08-04 11:10:19
+ * @LastEditTime: 2022-08-04 13:48:21
 -->
 <template>
   <!-- 设置粒子背景 -->
@@ -40,8 +40,7 @@ body {
   background: #5c917b;
   color: #FFF;
   box-sizing: border-box;
-   width: 12rem;
-  margin: 0 auto;
+  
   
 }
 
