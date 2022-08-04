@@ -1,111 +1,45 @@
-<template>
-  <div>
-    <nav style="z-index: 999">
-      <div class="navSty">
-        <div @click="$router.push('/')" class="navitem">
-          <svg height="40" width="60" xmlns="http://www.w3.org/2000/svg">
-            <rect id="shape" height="40" width="60" />
-          </svg>
-          <span>首页</span>
-        </div>
-        <div @click="$router.push('/learning')" class="navitem">
-          <svg height="40" width="60" xmlns="http://www.w3.org/2000/svg">
-            <rect id="shape" height="40" width="60" />
-          </svg>
-          <span>学习</span>
-        </div>
-        <div @click="$router.push('/saying')" class="navitem">
-          <svg height="40" width="60" xmlns="http://www.w3.org/2000/svg">
-            <rect id="shape" height="40" width="60" />
-          </svg>
-          <span>美句</span>
-        </div>
-        <div @click="$router.push('/music')" class="navitem">
-          <svg height="40" width="60" xmlns="http://www.w3.org/2000/svg">
-            <rect id="shape" height="40" width="60" />
-          </svg>
-          <span>音乐</span>
-        </div>
-        <div @click="$router.push('/movie')" class="navitem">
-          <svg height="40" width="60" xmlns="http://www.w3.org/2000/svg">
-            <rect id="shape" height="40" width="60" />
-          </svg>
-          <span>电影</span>
-        </div>
-        <div @click="$router.push('/reading')" class="navitem">
-          <svg height="40" width="60" xmlns="http://www.w3.org/2000/svg">
-            <rect id="shape" height="40" width="60" />
-          </svg>
-          <span>阅读</span>
-        </div>
-        <div @click="$router.push('/more')" class="navitem">
-          <svg height="40" width="60" xmlns="http://www.w3.org/2000/svg">
-            <rect id="shape" height="40" width="60" />
-          </svg>
-          <span>更多</span>
-        </div>
 
-        <!-- <div @click="$router.push('/learning')">学习</div>
-        <div @click="$router.push('/saying')">美句</div>
-        <div @click="$router.push('/music')">音乐</div>
-        <div @click="$router.push('/movie')">电影</div>
-        <div @click="$router.push('/reading')">阅读</div>
-        <div @click="$router.push('/more')">更多</div> -->
-      </div>
-      <p class="myInfo">楚歌儿</p>
-    </nav>
-  </div>
+<template>
+  <nav>
+    <ul>
+      <li v-for="(item, index) in menus" :key="index">{{ item }}</li>
+    </ul>
+  </nav>
 </template>
-<style lang="less">
+<script>
+export default {
+  name: 'pageHeader',
+  data() {
+    return {
+      menus: ['首页', '学习', '生活', '句子']
+    }
+  }
+
+}</script>
+<style lang="less" scoped>
 nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  position: absolute;
+  position: fixed;
+  z-index: 999;
   top: 0;
-  width: 96%;
-  padding: 0 2%;
-}
+  width: 100%;
+  font-size: .18rem;
+  padding: .32rem 0;
+  background: #5c917b;
 
-.myInfo {
-  cursor: pointer;
-  color: #fff;
-}
+  ul {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
 
-.navSty {
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  height: 62px;
-  color: #fff;
-}
-.navitem {
-  cursor: pointer;
-  position: relative;
-}
-
-#shape {
-  stroke-width: 2px;
-  fill: transparent;
-  stroke: pink;
-  stroke-dasharray: 50 400;
-  stroke-dashoffset: -104;
-  transition: 1s all ease;
-}
-#shape:hover {
-  stroke-dasharray: 50 0;
-  stroke-width: 2px;
-  stroke-dashoffset: 0;
-  stroke: rgb(134, 193, 228);
-}
-.navitem {
-  position: relative;
-  width: 96px;
-  span {
-    position: absolute;
-    top: 6px;
-    left: 16px;
-    z-index: -1;
+    li {
+      margin-right: .4rem;
+      cursor: pointer;
+      list-style: none;
+    }
   }
+
 }
 </style>

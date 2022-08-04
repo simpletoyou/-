@@ -3,8 +3,8 @@
  * @version: 
  * @Author: chenchuhua
  * @Date: 2021-05-12 14:50:11
- * @LastEditors: chenchuhua
- * @LastEditTime: 2021-05-12 16:07:32
+ * @LastEditors: chenchuhua 3361694095@qq.com
+ * @LastEditTime: 2022-08-03 16:28:14
  */
 import axios from "axios";
 /**
@@ -19,7 +19,7 @@ let getWeather = () => {
         .get("http://wthrcdn.etouch.cn/weather_mini?city=广州市")
         .then(({ data }) => {
             if (data.status === 1000) {
-                return data
+                return data.data
             }
         })
         .catch(console.error);

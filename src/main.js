@@ -3,8 +3,8 @@
  * @version: 
  * @Author: chenchuhua
  * @Date: 2021-04-22 14:26:50
- * @LastEditors: simpletoyou
- * @LastEditTime: 2022-01-14 10:52:46
+ * @LastEditors: chenchuhua 3361694095@qq.com
+ * @LastEditTime: 2022-08-03 16:25:56
  */
 // The Vue build version to load with the `import` command
 // (runtime-only or standalone) has been set in webpack.base.conf with an alias.
@@ -25,8 +25,8 @@ import Vuex from 'vuex'
 Vue.use(Vuex)
 
 // 引入背景动画
-import VueParticles from 'vue-particles'
-Vue.use(VueParticles)
+// import VueParticles from 'vue-particles'
+// Vue.use(VueParticles)
 
 import vueSwiper from 'vue-awesome-swiper'  //引入vue-awesome-swiper
 import 'swiper/dist/css/swiper.css'  //引入样式
