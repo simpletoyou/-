@@ -4,7 +4,7 @@
  * @Author: chenchuhua
  * @Date: 2021-04-22 14:26:50
  * @LastEditors: chenchuhua 3361694095@qq.com
- * @LastEditTime: 2022-08-03 16:25:56
+ * @LastEditTime: 2022-08-05 17:11:37
  */
 // The Vue build version to load with the `import` command
 // (runtime-only or standalone) has been set in webpack.base.conf with an alias.
@@ -39,6 +39,8 @@ Vue.use(vueSwiper)  //使用插件
 // 创建全局变量
 import datas from '../src/common/datas'
 Vue.prototype.$datas = datas
+import lifes from '../src/common/life'
+Vue.prototype.$lifes = lifes
 import api from '../src/common/api'
 Vue.prototype.$api = api
 
