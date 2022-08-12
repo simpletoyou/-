@@ -8,7 +8,7 @@
           <img src="../assets/index/intro1.jpg" alt="">
         </div>
         <div class="infoBox">
-          <div class="name">Jennifer</div>
+          <div class="name">书书</div>
           <div class="desc">Keep running.</div>
           <div class="other">
             Chaos is not a pit, Chaos is a ladder. Many who try to climb it fail, and never get to try again, The fall
@@ -24,8 +24,7 @@
           <div class="cardInfo">
             <div class="title">{{ item.title }}</div>
             <div class="desc">{{ item.desc }}</div>
-            <img src="../assets/index/entry.png" alt="">
-
+            <img src="../assets/index/entry.png" @click="toPage(index)" alt="">
           </div>
         </div>
       </div>
@@ -82,6 +81,19 @@ export default {
       let m = date_.getMonth() + 1;
       let d = date_.getDate();
       this.currentDate = `${y}-${m < 10 ? '0' + m : m}-${d < 10 ? '0' + d : d}`
+    },
+    toPage(index) {
+      index += 1
+      if (index===1) {
+        // 学习
+        this.$router.push('/learning')
+      } else if (index ===2) {
+        // 生活
+        this.$router.push('/life')
+      } else {
+        // 句子
+        this.$router.push('/saying')
+      }
     }
   },
 };
@@ -202,6 +214,7 @@ export default {
             margin: .4rem 0;
             width: .4rem;
             height: .4rem;
+            cursor: pointer;
           }
 
 

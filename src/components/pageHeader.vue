@@ -10,7 +10,7 @@
 <template>
   <nav>
     <ul>
-      <li v-for="(item, index) in menus" :key="index">{{ item }}</li>
+      <li @click="toPage(index)" v-for="(item, index) in menus" :key="index">{{ item }}</li>
     </ul>
   </nav>
 </template>
@@ -20,6 +20,23 @@ export default {
   data() {
     return {
       menus: ['首页', '学习', '生活', '句子']
+    }
+  },
+  methods: {
+    toPage(index) {
+      if(!index) {
+        // 首页
+        this.$router.push('/')
+      } else if (index===1) {
+        // 学习
+        this.$router.push('/learning')
+      } else if (index ===2) {
+        // 生活
+        this.$router.push('/life')
+      } else {
+        // 句子
+        this.$router.push('/saying')
+      }
     }
   }
 
@@ -35,7 +52,7 @@ nav {
   font-size: .16rem;
   background: #437661;
   width: 12rem;
-  padding: .32rem calc(50% - 6rem);
+  padding: .2rem calc(50% - 6rem);
 
   ul {
     display: flex;
@@ -43,7 +60,7 @@ nav {
     justify-content: flex-start;
 
     li {
-      margin-right: .4rem;
+      margin-right: .8rem;
       cursor: pointer;
       list-style: none;
     }
