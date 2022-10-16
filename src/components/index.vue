@@ -24,7 +24,9 @@
           <div class="cardInfo">
             <div class="title">{{ item.title }}</div>
             <div class="desc">{{ item.desc }}</div>
-            <img src="../assets/index/entry.png" @click="toPage(index)" alt="">
+            <div class="entryBtn">
+              <img src="../assets/index/entry.png" alt="">
+            </div>
           </div>
         </div>
       </div>
@@ -210,13 +212,74 @@ export default {
             line-height: .32rem;
           }
 
-          img {
-            margin: .4rem 0;
-            width: .4rem;
-            height: .4rem;
+          // img {
+          //   margin: .4rem 0;
+          //   width: .4rem;
+          //   height: .4rem;
+          // }
+
+          .entryBtn {
+            color: #fff;
+            border-radius: 4px;
+            padding: .1rem .6rem;
+            margin-top: .4rem;
+            font-family: 'Lato', sans-serif;
+            font-weight: 500;
+            background: transparent;
             cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+            display: inline-block;
+            box-shadow: inset 2px 2px 2px 0px rgba(255, 255, 255, .5),
+              7px 7px 20px 0px rgba(0, 0, 0, .1),
+              4px 4px 5px 0px rgba(0, 0, 0, .1);
+            outline: none;
+
+            background-color: #89d8d3;
+            background-image: linear-gradient(315deg, #89d8d3 0%, #03c8a8 74%);
+            border: none;
+            z-index: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            img {
+              width: .2rem;
+              height: .2rem;
+            }
+
           }
 
+          .entryBtn:after {
+            position: absolute;
+            content: "";
+            width: 100%;
+            height: 0;
+            bottom: 0;
+            left: 0;
+            z-index: -1;
+            border-radius: 4px;
+            background-color: #4dccc6;
+            background-image: linear-gradient(315deg, #4dccc6 0%, #96e4df 74%);
+            box-shadow:
+              -7px -7px 20px 0px #fff9,
+              -4px -4px 5px 0px #fff9,
+              7px 7px 20px 0px #0002,
+              4px 4px 5px 0px #0001;
+            transition: all 0.3s ease;
+          }
+
+          .entryBtn:hover {
+            color: #fff;
+          }
+
+          .entryBtn:hover:after {
+            top: 0;
+            height: 100%;
+          }
+
+          .entryBtn:active {
+            top: 2px;
+          }
 
         }
 
